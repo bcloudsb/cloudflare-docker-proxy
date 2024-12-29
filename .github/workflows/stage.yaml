@@ -15,11 +15,11 @@ jobs:
       - name: Publish
         uses: cloudflare/wrangler-action@v3
         env:
-          CUSTOM_DOMAIN: ${{ secrets.CUSTOM_DOMAIN || 'libcuda.so' }}
+          CUSTOM_DOMAIN: ${{ secrets.CUSTOM_DOMAIN || 'cloudbai.xyz' }}
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{secrets.CF_ACCOUNT_ID}}
           vars:
-            CUSTOM_DOMAIN
+            cloudbai.xyz
           command: deploy --env staging --minify src/index.js
           environment: staging
